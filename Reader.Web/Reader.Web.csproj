@@ -14,4 +14,9 @@
     <ProjectReference Include="..\Reader.ReaderDb\Reader.ReaderDb.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\BooksRead\" />
+    <Folder Include="Pages\Shared\" />
+  </ItemGroup>
+
 </Project>

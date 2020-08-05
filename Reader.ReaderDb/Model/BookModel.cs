@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Reader.ReaderDb.Model
 {
     [Table("Books")]
-    public class BooksModel : ICloneable
+    public class BookModel : ICloneable
     {
         [Key]
         public int BookId { get; set; }

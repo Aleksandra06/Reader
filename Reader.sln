@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reader.Web", "Reader.Web\Reader.Web.csproj", "{7E26E2D1-4A52-4C33-A5AE-335D9871D9BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reader.Web", "Reader.Web\Reader.Web.csproj", "{7E26E2D1-4A52-4C33-A5AE-335D9871D9BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reader.ReaderDb", "Reader.ReaderDb\Reader.ReaderDb.csproj", "{3790CBC3-245E-4E14-BBED-C5AFA147DECF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reader.ReaderDb", "Reader.ReaderDb\Reader.ReaderDb.csproj", "{3790CBC3-245E-4E14-BBED-C5AFA147DECF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,35 @@
+﻿@page "/authors"
+@inherits AuthorsViewModel
+
+<h3>Authors</h3>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Nickname</th>
+            <th>Time</th>
+            <th>BirthDay</th>
+            <th>DeathDay</th>
+            <th>InsertDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Models?.Count > 0)
+        {
+            @foreach (var model in Models)
+            {
+                <tr>
+                    <td>@model.AuthorId</td>
+                    <td>@model.Name </td>
+                    <td>@model.Nickname </td>
+                    <td>@model.Time </td>
+                    <td>@model.BirthDay </td>
+                    <td>@model.DeathDay </td>
+                    <td>@model.InsertDate </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

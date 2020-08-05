@@ -1,28 +1,14 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Reader.Web</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
+﻿@inject NavigationManager UriHelper
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </li>
-    </ul>
+<div class="top-row px-4">
+    <div class="row mr-auto">
+        <span class="nav-link" @onclick="@(()=>UriHelper.NavigateTo(UriHelper.BaseUri + "bookReader", true))">
+            <span class="oi oi-book" aria-hidden="true"></span> Book-reader
+        </span>
+        <span class="nav-link" @onclick="@(()=>UriHelper.NavigateTo(UriHelper.BaseUri + "authors", true))">
+            <span class="oi" aria-hidden="true"></span> Authors
+        </span>
+    </div>
 </div>
 
 @code {

@@ -19,33 +19,34 @@ namespace Reader.ReaderDb
 
         public IEnumerable<TEntity> Get()
         {
-            return mDbSet.ToList();
+            return mDbSet.AsNoTracking().AsQueryable();
         }
-        public IQueryable<TEntity> GetQueryable()
+        public IEnumerable<TEntity> GetAll()
         {
-            return mDbSet.AsQueryable();
+            return mDbSet.AsNoTracking();
         }
-
         public IEnumerable<TEntity> Take(int count)
         {
-            return mDbSet.Take(count).ToList();
+            return mDbSet.AsNoTracking().Take(count).ToList();
         }
-
         public IEnumerable<TEntity> Take(int count, Func<TEntity, bool> predicate)
         {
-            return mDbSet.Where(predicate).Take(count).ToList();
+            return mDbSet.AsNoTracking().Where(predicate).Take(count).ToList();
         }
 
         public IEnumerable<TEntity> Get(Func<TEntity, bool> predicate)
         {
-            return mDbSet.Where(predicate).ToList();
+            return mDbSet.AsNoTracking().Where(predicate).ToList();
         }
-
         public TEntity FindById(int id)
         {
-            return mDbSet.Find(id);
+            var item = mDbSet.Find(id);
+            if (item != null)
+            {
+                mContext.Entry(item).Reload();
+            }
+            return item;
         }
-
         public TEntity Create(TEntity item)
         {
             var itemNew = mDbSet.Add(item).Entity;
@@ -58,7 +59,6 @@ namespace Reader.ReaderDb
             mContext.SaveChanges();
             return item;
         }
-
         public void Remove(TEntity item)
         {
             mDbSet.Attach(item);

@@ -11,7 +11,8 @@ namespace Reader.ReaderDb
         {
         }
 
-        public DbSet<BooksModel> BookDbSet { get; set; }
+        public DbSet<BookModel> BookDbSet { get; set; }
         public DbSet<ReadModel> ReadDbSet { get; set; }
+        public DbSet<AuthorModel> AutorDbSet { get; set; }
     }
 }

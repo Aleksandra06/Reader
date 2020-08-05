@@ -14,7 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Reader.ReaderDb;
-using Reader.Web.Data;
+using Reader.Web.Services;
 
 namespace Reader.Web
 {
@@ -61,6 +61,8 @@ namespace Reader.Web
                 config.MaximumOpacity = 95;
                 config.VisibleStateDuration = 3000;
             });
+
+            services.AddScoped<AuthorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

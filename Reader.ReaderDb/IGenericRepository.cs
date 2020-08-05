@@ -9,7 +9,7 @@ namespace Reader.ReaderDb
         TEntity Create(TEntity item);
         TEntity FindById(int id);
         IEnumerable<TEntity> Get();
-        IQueryable<TEntity> GetQueryable();
+        IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> Get(Func<TEntity, bool> predicate);
         IEnumerable<TEntity> Take(int count);
         IEnumerable<TEntity> Take(int count, Func<TEntity, bool> predicate);
